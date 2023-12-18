@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"log"
-	"quickmail/api"
-	googleauth "quickmail/auth/google"
+	"mailer/api"
+	googleauth "mailer/auth/google"
 
 	"google.golang.org/api/gmail/v1"
 	"google.golang.org/api/option"

@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	googleauth "mailer/auth/google"
+	"mailer/statestore"
 	"net"
 	"net/http"
-	googleauth "quickmail/auth/google"
-	"quickmail/statestore"
 	"strconv"
 	"sync"
 	"time"
@@ -23,7 +23,7 @@ import (
 type ApiServer struct{}
 
 var (
-	ss           = statestore.New("./quickmail.db")
+	ss           = statestore.New("./statestore.db")
 	oauth2Config *oauth2.Config
 	listener     net.Listener
 	apiPort      int
@@ -238,7 +238,7 @@ func New() *ApiServer {
 
 func (s *ApiServer) Handle() {
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
-		fmt.Fprint(w, "<h1>QuickMail says: Hello World</h1>")
+		fmt.Fprint(w, "<h1>statestore says: Hello World</h1>")
 	})
 
 	http.HandleFunc("/google/login", googleLogin)

@@ -3,7 +3,7 @@ package receiver
 import (
 	"fmt"
 	"log"
-	"quickmail/services"
+	"mailer/services"
 
 	"github.com/emersion/go-imap/client"
 )
