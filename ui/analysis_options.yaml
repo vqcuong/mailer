@@ -19,7 +19,7 @@ linter:
     prefer_is_not_empty: true
     prefer_is_not_operator: true
     prefer_iterable_whereType: true
-    prefer_const_constructors: false
+    prefer_const_constructors: true
     unnecessary_lambdas: true
     unnecessary_raw_strings: true
     unnecessary_string_escapes: true

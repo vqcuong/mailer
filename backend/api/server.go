@@ -45,7 +45,7 @@ func googleLogin(w http.ResponseWriter, r *http.Request) {
 	oauth2Config = googleauth.GetConfig()
 	oauth2Config.RedirectURL = fmt.Sprintf("http://localhost:%d/google/callback", apiPort)
 	url := oauth2Config.AuthCodeURL("state-token", oauth2.AccessTypeOffline)
-	log.Println("AuthURL: ", url)
+	log.Println("Auth url: ", url)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
 }
 
@@ -238,7 +238,7 @@ func New() *ApiServer {
 
 func (s *ApiServer) Handle() {
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
-		fmt.Fprint(w, "<h1>statestore says: Hello World</h1>")
+		fmt.Fprint(w, "<h1>Mailer says hello</h1>")
 	})
 
 	http.HandleFunc("/google/login", googleLogin)
