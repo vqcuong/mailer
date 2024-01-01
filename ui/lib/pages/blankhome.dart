@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
-import 'package:webview_flutter/webview_flutter.dart';
-import 'package:logging/logging.dart';
+import "package:logging/logging.dart";
 
 final log = Logger("BlankHome");
 
